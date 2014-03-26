@@ -30,8 +30,10 @@ import android.view.OrientationEventListener;
 import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
-import java.io.IOException;
+
 import com.commonsware.cwac.camera.CameraHost.FailureReason;
+
+import java.io.IOException;
 
 public class CameraView extends ViewGroup implements
     Camera.PictureCallback {
@@ -316,8 +318,10 @@ public class CameraView extends ViewGroup implements
 
     recorder=null;
     tempRecorder.stop();
+    tempRecorder.reset();
     tempRecorder.release();
-    camera.reconnect();
+//    camera.reconnect();
+      startPreview();
   }
 
   public void autoFocus() {
