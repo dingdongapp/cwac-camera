@@ -257,7 +257,7 @@ public class CameraView extends ViewGroup implements
   }
 
   public void takePicture(boolean needBitmap, boolean needByteArray) {
-    if (inPreview) {
+      if (!inPreview) startPreview();
       this.needBitmap=needBitmap;
       this.needByteArray=needByteArray;
 
@@ -273,7 +273,6 @@ public class CameraView extends ViewGroup implements
 
       camera.takePicture(getHost().getShutterCallback(), null, this);
       inPreview=false;
-    }
   }
 
   public boolean isRecording() {
