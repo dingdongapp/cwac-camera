@@ -37,3 +37,5 @@ dist*/
 # Temporary credentials
 test_creds.xml
 
+build
+*.iml
