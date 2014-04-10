@@ -1,7 +1,7 @@
 /***
   Copyright (c) 2013-2014 CommonsWare, LLC
   Portions Copyright (C) 2007 The Android Open Source Project
-  
+
   Licensed under the Apache License, Version 2.0 (the "License"); you may
   not use this file except in compliance with the License. You may obtain
   a copy of the License at
@@ -129,11 +129,10 @@ public class CameraView extends ViewGroup implements AutoFocusCallback {
   }
 
   public void onPause() {
-    if (camera != null) {
-      previewDestroyed();
-      removeView(previewStrategy.getWidget());
+    if(previewStrategy.getWidget() != null) {
+       removeView(previewStrategy.getWidget());
     }
-
+    previewDestroyed();
     lastPictureOrientation=-1;
   }
 
