@@ -313,15 +313,17 @@ public class CameraView extends ViewGroup implements AutoFocusCallback {
         postDelayed(new Runnable() {
           @Override
           public void run() {
-            try {
-              camera.takePicture(xact, null,
+
+//            Throw exception to the client
+//            try {
+                camera.takePicture(xact, null,
                                  new PictureTransactionCallback(xact));
-            }
-            catch (Exception e) {
-              android.util.Log.e(getClass().getSimpleName(),
-                                 "Exception taking a picture", e);
-              // TODO get this out to library clients
-            }
+//            }
+//            catch (Exception e) {
+//              android.util.Log.e(getClass().getSimpleName(),
+//                                 "Exception taking a picture", e);
+//              // TODO get this out to library clients
+//            }
           }
         }, xact.host.getDeviceProfile().getPictureDelay());
 
