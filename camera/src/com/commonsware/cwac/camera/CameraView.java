@@ -107,9 +107,11 @@ public class CameraView extends ViewGroup implements AutoFocusCallback {
         try {
           camera=Camera.open(cameraId);
 
-          if (getActivity().getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
-            onOrientationChange.enable();
-          }
+
+            // Removed these lines because it was stucking the Main Thread on Moto G
+//          if (getActivity().getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
+//            onOrientationChange.enable();
+//          }
 
           setCameraDisplayOrientation();
 
